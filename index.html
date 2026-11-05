@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171735">
+  <title>Fun Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="app">
+
+    <header class="topbar">
+      <a class="brand" href="#">🎮 FUN <span>TIC TAC TOE</span></a>
+      <button id="themeToggle" class="icon-button" type="button"
+        aria-label="Switch theme">☀️</button>
+    </header>
+
+    <section class="game-container">
+
+      <div class="intro">
+        <p class="eyebrow">⭐ THE CLASSIC GAME, WITH A TWIST ⭐</p>
+        <h1>Fun Tic Tac Toe 🎉</h1>
+        <p class="subtitle">Make your move. Get three in a row. Have fun!</p>
+      </div>
+
+      <section class="setup panel">
+
+        <div class="setting">
+          <label for="gameMode">Game mode</label>
+          <select id="gameMode">
+            <option value="pvp">Player vs Player</option>
+            <option value="ai">Player vs Computer</option>
+          </select>
+        </div>
+
+        <div class="setting">
+          <label for="playerX">Player X name</label>
+          <input id="playerX" type="text" maxlength="16" value="Player X">
+        </div>
+
+        <div class="setting" id="playerOSetting">
+          <label for="playerO">Player O name</label>
+          <input id="playerO" type="text" maxlength="16" value="Player O">
+        </div>
+
+        <div class="setting hidden" id="difficultySetting">
+          <label for="difficulty">Computer difficulty</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+      </section>
+
+      <section class="scoreboard">
+
+        <article class="score-card x-card">
+          <span class="score-symbol">X</span>
+          <span class="score-name" id="scoreNameX">Player X</span>
+          <strong id="scoreX">0</strong>
+        </article>
+
+        <article class="score-card draw-card">
+          <span class="score-symbol">🤝</span>
+          <span class="score-name">Draws</span>
+          <strong id="scoreDraw">0</strong>
+        </article>
+
+        <article class="score-card o-card">
+          <span class="score-symbol">O</span>
+          <span class="score-name" id="scoreNameO">Player O</span>
+          <strong id="scoreO">0</strong>
+        </article>
+
+      </section>
+
+      <section class="game-panel panel">
+
+        <div class="game-meta">
+          <div>
+            <span class="meta-label">🎯 CURRENT TURN</span>
+            <h2 id="status" aria-live="polite">PLAYER X TURN</h2>
+          </div>
+
+          <div class="timer-wrap">
+            <span class="meta-label">⏱️ TIME</span>
+            <strong id="timer">00:00</strong>
+          </div>
+        </div>
+
+        <div class="board" id="board">
+          <button class="cell" data-index="0" type="button" aria-label="Cell 1"></button>
+          <button class="cell" data-index="1" type="button" aria-label="Cell 2"></button>
+          <button class="cell" data-index="2" type="button" aria-label="Cell 3"></button>
+          <button class="cell" data-index="3" type="button" aria-label="Cell 4"></button>
+          <button class="cell" data-index="4" type="button" aria-label="Cell 5"></button>
+          <button class="cell" data-index="5" type="button" aria-label="Cell 6"></button>
+          <button class="cell" data-index="6" type="button" aria-label="Cell 7"></button>
+          <button class="cell" data-index="7" type="button" aria-label="Cell 8"></button>
+          <button class="cell" data-index="8" type="button" aria-label="Cell 9"></button>
+        </div>
+
+        <p class="message" id="message" aria-live="polite">
+          🌟 First player starts the game!
+        </p>
+
+        <div class="buttons">
+          <button id="undo" class="secondary-button" type="button">↶ Undo</button>
+          <button id="restart" class="primary-button" type="button">↻ Restart</button>
+          <button id="newMatch" class="secondary-button" type="button">🏆 New Match</button>
+        </div>
+
+      </section>
+
+      <section class="history-panel panel">
+
+        <div class="history-heading">
+          <div>
+            <p class="eyebrow">YOUR RECENT GAMES</p>
+            <h2>🏆 Match History</h2>
+          </div>
+
+          <button id="clearHistory" class="text-button" type="button">
+            Clear history
+          </button>
+        </div>
+
+        <ul id="historyList" class="history-list">
+          <li class="empty-history">
+            Your completed matches will appear here.
+          </li>
+        </ul>
+
+      </section>
+
+      <footer>
+        Made with ❤️ for fun · Your scores are saved on this device
+      </footer>
+
+    </section>
+  </main>
+
+</body>
+</html>
